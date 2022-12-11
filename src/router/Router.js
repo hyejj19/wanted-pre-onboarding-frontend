@@ -5,7 +5,7 @@ import {SignUp} from '../pages/SignUp';
 
 const Router = () => {
   return (
-    <BrowserRouter basename="/wanted-pre-onboarding-frontend">
+    <BrowserRouter>
       <Routes>
         <Route path="/todo" element={<Todo />} />
         <Route path="/" element={<SignIn />} />
