@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const baseURL = process.env.REACT_APP_API_URL;
+
 export const signin = loginValue => {
   axios
-    .post('/auth/signin', loginValue, {
+    .post(`${baseURL}/auth/signin`, loginValue, {
       headers: {
         withCredentials: true,
         'Content-Type': `application/json`,
