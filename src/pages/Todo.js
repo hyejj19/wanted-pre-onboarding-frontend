@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {TodoContent} from '../components/TodoContent';
 import {postTodo, deleteTodo, editTodo} from '../api/todosApi';
 import {useFetch} from '../hooks/useFetch';
@@ -32,6 +32,12 @@ export const Todo = () => {
   };
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem('access_token')) {
+      navigate('/');
+    }
+  });
 
   return (
     <main className="flex flex-col h-screen w-screen justify-center items-center py-28">
