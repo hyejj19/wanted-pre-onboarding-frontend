@@ -52,7 +52,7 @@ export const Todo = () => {
           </button>
         </form>
         {data &&
-          data.map(todo => (
+          data?.map(todo => (
             <TodoContent
               todo={todo}
               onDeleteTodo={onDeleteTodo}
