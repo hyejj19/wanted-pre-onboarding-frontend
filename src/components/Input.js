@@ -1,4 +1,4 @@
-export const Input = ({type, label, value, setValue}) => {
+export const Input = ({type, label, value, setValue, placeholder}) => {
   const onChange = e => {
     setValue(prev => {
       return {...prev, ...{[type]: e.target.value}};
@@ -7,14 +7,17 @@ export const Input = ({type, label, value, setValue}) => {
 
   return (
     <>
-      <fieldset className="flex items-center space-x-3">
-        <label htmlFor={type}>{label}</label>
+      <fieldset className="flex items-center space-x-3 w-96">
+        <label className="w-32" htmlFor={type}>
+          {label}
+        </label>
         <input
-          className="border"
+          className="border placeholder:text-sm w-full p-2"
           type={type}
           id={type}
           value={value}
           onChange={onChange}
+          placeholder={placeholder}
         />
       </fieldset>
     </>
