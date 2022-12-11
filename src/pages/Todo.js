@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {TodoContent} from '../components/TodoContent';
 import {postTodo, deleteTodo, editTodo} from '../api/todosApi';
 import {useFetch} from '../hooks/useFetch';
+import {useNavigate} from 'react-router-dom';
 
 export const Todo = () => {
   const [todoInput, setTodoInput] = useState('');
@@ -29,6 +30,8 @@ export const Todo = () => {
       setData(newTodos);
     });
   };
+
+  const navigate = useNavigate();
 
   return (
     <main className="flex flex-col h-screen w-screen justify-center items-center py-28">
@@ -58,6 +61,17 @@ export const Todo = () => {
             />
           ))}
       </section>
+      <button
+        className="bg-yellow-300 hover:bg-orange-300 transition px-10 py-2 rounded-md disabled:bg-slate-100
+          disabled:text-gray-400 mt-5
+          "
+        onClick={() => {
+          localStorage.clear();
+          navigate('/');
+        }}
+      >
+        로그아웃
+      </button>
     </main>
   );
 };
