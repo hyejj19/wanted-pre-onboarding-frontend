@@ -1,8 +1,12 @@
-import {client} from '../libs/client';
+import axios from 'axios';
 
 export const signin = loginValue => {
-  client
-    .post('/auth/signin', loginValue)
+  axios
+    .post('/auth/signin', loginValue, {
+      headers: {
+        'Content-Type': `application/json`,
+      },
+    })
     .then(res => {
       localStorage.setItem('access_token', res.data.access_token);
       window.location.href = '/todo';

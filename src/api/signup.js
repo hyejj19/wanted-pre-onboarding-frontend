@@ -1,8 +1,12 @@
-import {client} from '../libs/client';
+import axios from 'axios';
 
 export const signup = loginValue => {
-  client
-    .post('/auth/signup', loginValue)
+  axios
+    .post('/auth/signup', loginValue, {
+      headers: {
+        'Content-Type': `application/json`,
+      },
+    })
     .then(res => {
       localStorage.setItem('access_token', res.data.access_token);
       alert('회원가입에 성공하였습니다! 로그인 페이지로 이동합니다.');
