@@ -25,11 +25,7 @@ export const Form = ({submit, type}) => {
   }, [userInfo]);
 
   return (
-    <form
-      className="flex flex-col space-y-3 items-end"
-      onSubmit={onSubmit}
-      method="POST"
-    >
+    <form className="flex flex-col space-y-3 items-end">
       <Input
         type={'email'}
         label={'이메일'}
@@ -51,6 +47,7 @@ export const Form = ({submit, type}) => {
           w-full
           "
         disabled={!isValid}
+        onClick={onSubmit}
       >
         {type}
       </button>
