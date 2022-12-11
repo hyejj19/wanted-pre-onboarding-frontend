@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://hyejj19.github.io/wanted-pre-onboarding-frontend/",
+  "homepage": "https://hyejj19.github.io/wanted-pre-onboarding-frontend",
   "eslintConfig": {
     "extends": [
       "react-app",
