@@ -1,13 +1,13 @@
-import {useState} from 'react';
-
-export const Input = ({type, label}) => {
-  const [value, setValue] = useState('');
+export const Input = ({type, label, value, setValue}) => {
   const onChange = e => {
-    setValue(e.target.value);
+    setValue(prev => {
+      return {...prev, ...{[type]: e.target.value}};
+    });
   };
+
   return (
     <>
-      <section className="flex items-center space-x-3">
+      <fieldset className="flex items-center space-x-3">
         <label htmlFor={type}>{label}</label>
         <input
           className="border"
@@ -16,7 +16,7 @@ export const Input = ({type, label}) => {
           value={value}
           onChange={onChange}
         />
-      </section>
+      </fieldset>
     </>
   );
 };
