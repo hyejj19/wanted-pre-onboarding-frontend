@@ -9,7 +9,7 @@ export const signin = loginValue => {
     })
     .then(res => {
       localStorage.setItem('access_token', res.data.access_token);
-      window.location.href = '/todo';
+      window.location = '/todo';
     })
     .catch(err => {
       alert(
