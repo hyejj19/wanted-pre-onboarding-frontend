@@ -1,4 +1,4 @@
-import {signup} from '../api/signup';
+import {signup} from '../../api/signup';
 import {useNavigate} from 'react-router-dom';
 import {Form} from '../components/Form';
 
