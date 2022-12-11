@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {TodoContent} from '../components/TodoContent';
-import {postTodo, deleteTodo, editTodo} from '../../api/todosApi';
+import {postTodo, deleteTodo, editTodo} from '../api/todosApi';
 import {useFetch} from '../hooks/useFetch';
 import {useNavigate} from 'react-router-dom';
 

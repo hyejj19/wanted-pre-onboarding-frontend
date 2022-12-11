@@ -1,4 +1,4 @@
-import {signin} from '../../api/signin';
+import {signin} from '../api/signin';
 import {useNavigate} from 'react-router-dom';
 import {Form} from '../components/Form';
 import {useEffect} from 'react';
