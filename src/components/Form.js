@@ -25,7 +25,11 @@ export const Form = ({submit, type}) => {
   }, [userInfo]);
 
   return (
-    <form className="flex flex-col space-y-3 items-end" onSubmit={onSubmit}>
+    <form
+      className="flex flex-col space-y-3 items-end"
+      onSubmit={onSubmit}
+      method="POST"
+    >
       <Input
         type={'email'}
         label={'이메일'}
