@@ -4,6 +4,7 @@ export const signup = loginValue => {
   axios
     .post('/auth/signup', loginValue, {
       headers: {
+        withCredentials: true,
         'Content-Type': `application/json`,
       },
     })
