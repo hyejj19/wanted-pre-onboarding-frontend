@@ -1,9 +1,13 @@
 import {signin} from '../api/signin';
 import {useNavigate} from 'react-router-dom';
 import {Form} from '../components/Form';
+import {useEffect} from 'react';
 
 export const SignIn = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem('access_token')) navigate('/todo');
+  }, [navigate]);
 
   return (
     <main className="flex justify-center items-center h-screen flex-col space-y-5">
