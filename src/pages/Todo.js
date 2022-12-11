@@ -51,15 +51,16 @@ export const Todo = () => {
             +
           </button>
         </form>
-        {data &&
-          data?.map(todo => (
-            <TodoContent
-              todo={todo}
-              onDeleteTodo={onDeleteTodo}
-              onEditTodo={onEditTodo}
-              key={todo.id}
-            />
-          ))}
+        {data
+          ? data.map(todo => (
+              <TodoContent
+                todo={todo}
+                onDeleteTodo={onDeleteTodo}
+                onEditTodo={onEditTodo}
+                key={todo.id}
+              />
+            ))
+          : null}
       </section>
       <button
         className="bg-yellow-300 hover:bg-orange-300 transition px-10 py-2 rounded-md disabled:bg-slate-100
