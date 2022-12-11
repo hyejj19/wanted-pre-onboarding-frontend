@@ -13,7 +13,6 @@ export const Form = ({submit, type}) => {
   const onSubmit = e => {
     e.preventDefault();
     submit(userInfo);
-    console.log('signup');
   };
 
   // 유효성 검사
